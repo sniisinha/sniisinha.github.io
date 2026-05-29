@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snigdha Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #1a1a1a;
+      --soft:   #f5f3ef;
+      --muted:  #8a8070;
+      --accent: #c05a2e;
+      --rule:   #ddd8d0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--soft);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 4rem;
+      background: var(--soft);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 5rem;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 4rem 6rem 4rem;
+      border-right: 1px solid var(--rule);
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.75rem;
+      color: var(--ink);
+    }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 38ch;
+      line-height: 1.8;
+    }
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--soft);
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-outline {
+      border: 1px solid var(--ink);
+      color: var(--ink);
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--soft); }
+
+    .hero-aside {
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 4rem;
+    }
+    .hero-aside-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .hero-aside-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    /* ── Sections ── */
+    section { padding: 6rem 4rem; border-top: 1px solid var(--rule); }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 3rem;
+      max-width: 20ch;
+    }
+
+    /* ── About ── */
+    #about { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+    .about-body p {
+      font-size: 1rem;
+      color: #444;
+      max-width: 65ch;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Projects ── */
+    #projects .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5px;
+      background: var(--rule);
+      border: 1.5px solid var(--rule);
+    }
+    .project-card {
+      background: var(--soft);
+      padding: 2.25rem;
+      transition: background 0.2s;
+    }
+    .project-card:hover { background: #eceae4; }
+    .project-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .project-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .project-link:hover { color: var(--accent); border-color: var(--accent); }
+    .project-placeholder {
+      font-size: 0.82rem;
+      color: var(--rule);
+      font-style: italic;
+    }
+
+    /* ── Skills ── */
+    #skills { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+    .skills-grid {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+    }
+    .skill-tag {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--rule);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      background: transparent;
+      transition: all 0.2s;
+    }
+    .skill-tag:hover { background: var(--ink); color: var(--soft); border-color: var(--ink); }
+
+    /* ── Contact ── */
+    #contact { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-links { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 0.5rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 1rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.9rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s;
+    }
+    .contact-item:hover { color: var(--accent); }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--rule);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ── Animations ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      #hero { grid-template-columns: 1fr; }
+      .hero-text { padding: 5rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
+      .hero-aside { padding: 2rem 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      #about, #skills, #contact { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#hero">Snigdha Sinha</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow fade-in">Machine Learning · Computer Vision · NLP</p>
+      <h1 class="hero-name fade-in">Snigdha<br>Sinha</h1>
+      <p class="hero-tagline fade-in">CS graduate student at Boston University, building scalable ML solutions that bridge research and real-world impact.</p>
+      <div class="hero-cta fade-in">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-aside fade-in">
+      <p class="hero-aside-label">Currently</p>
+      <p class="hero-aside-value">MS Computer Science<br>Boston University</p>
+      <p class="hero-aside-label">Also</p>
+      <p class="hero-aside-value">ML Engineer<br>Deloitte</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div>
+      <p class="section-label fade-in">About</p>
+      <h2 class="section-title fade-in">A bit about me.</h2>
+    </div>
+    <div class="about-body fade-in">
+      <p>CS graduate student at Boston University with hands-on experience applying machine learning and data science to real-world problems in pricing, customer segmentation, and NLP.</p>
+      <p>At Deloitte, the focus has been on developing and scaling ML pipelines using GLMs, clustering algorithms, and transformer-based language models to support decision-making and automation across diverse business domains.</p>
+      <p>Skilled in Python, PySpark, TensorFlow, and Hugging Face — with a drive to develop robust, scalable ML solutions that connect research-oriented ideas with impactful applications.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <p class="section-label fade-in">Work</p>
+    <h2 class="section-title fade-in">Selected projects.</h2>
+    <div class="projects-grid fade-in">
+      <div class="project-card">
+        <p class="project-num">01</p>
+        <h3 class="project-title">Add your first project</h3>
+        <p class="project-desc">Projects will be pulled from your GitHub. Add them here once ready.</p>
+        <span class="project-placeholder">github.com/sniisinha</span>
+      </div>
+      <div class="project-card">
+        <p class="project-num">02</p>
+        <h3 class="project-title">Add your second project</h3>
+        <p class="project-desc">Describe what the project does, the tech stack used, and the impact.</p>
+        <span class="project-placeholder">github.com/sniisinha</span>
+      </div>
+      <div class="project-card">
+        <p class="project-num">03</p>
+        <h3 class="project-title">Add your third project</h3>
+        <p class="project-desc">Keep descriptions concise — one or two sentences is plenty.</p>
+        <span class="project-placeholder">github.com/sniisinha</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div>
+      <p class="section-label fade-in">Toolkit</p>
+      <h2 class="section-title fade-in">Skills &amp; technologies.</h2>
+    </div>
+    <div class="skills-grid fade-in">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">C++</span>
+      <span class="skill-tag">PyTorch</span>
+      <span class="skill-tag">TensorFlow</span>
+      <span class="skill-tag">Keras</span>
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">GCP</span>
+      <span class="skill-tag">NLP</span>
+      <span class="skill-tag">PySpark</span>
+      <span class="skill-tag">Hugging Face</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div>
+      <p class="section-label fade-in">Contact</p>
+      <h2 class="section-title fade-in">Let's connect.</h2>
+    </div>
+    <div class="contact-links fade-in">
+      <a class="contact-item" href="mailto:snigdhasinha2024@gmail.com">
+        <div>
+          <span class="contact-label">Email</span>
+          snigdhasinha2024@gmail.com
+        </div>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/snigdha-sinha-bab208193/" target="_blank" rel="noopener">
+        <div>
+          <span class="contact-label">LinkedIn</span>
+          linkedin.com/in/snigdha-sinha-bab208193
+        </div>
+      </a>
+      <a class="contact-item" href="https://github.com/sniisinha" target="_blank" rel="noopener">
+        <div>
+          <span class="contact-label">GitHub</span>
+          github.com/sniisinha
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Snigdha Sinha</span>
+    <span>Boston, MA</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
