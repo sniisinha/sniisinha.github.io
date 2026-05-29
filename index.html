@@ -155,6 +155,70 @@
       margin-bottom: 1.25rem;
     }
 
+     /* ── Experience ── */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .experience-item {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .experience-item:first-child { border-top: 1px solid var(--rule); }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+      gap: 1rem;
+    }
+
+    .experience-role {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .experience-company {
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+    }
+
+    .experience-date {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .experience-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .experience-bullets li {
+      font-size: 0.9rem;
+      color: #444;
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .experience-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
     /* ── Projects ── */
     #projects .projects-grid {
       display: grid;
@@ -310,11 +374,50 @@
       <h2 class="section-title fade-in">A bit about me.</h2>
     </div>
     <div class="about-body fade-in">
-      <p>CS graduate student at Boston University with hands-on experience applying machine learning and data science to real-world problems in pricing, customer segmentation, and NLP.</p>
-      <p>At Deloitte, the focus has been on developing and scaling ML pipelines using GLMs, clustering algorithms, and transformer-based language models to support decision-making and automation across diverse business domains.</p>
-      <p>Skilled in Python, PySpark, TensorFlow, and Hugging Face — with a drive to develop robust, scalable ML solutions that connect research-oriented ideas with impactful applications.</p>
+      <p>CS graduate student at Boston University with experience applying machine learning and data science to problems in pricing, customer segmentation, and NLP.</p>
+      <p>At Deloitte, the focus has been on developing and scaling ML pipelines using GLMs, clustering algorithms, and transformer-based language models to support decision-making and automation across different business domains.</p>
+      <p>Skilled in Python, PySpark, TensorFlow, and Hugging Face, with a focus on building ML solutions that connect research to practical applications.</p>
     </div>
   </section>
+
+  <!-- Experience -->
+<section id="experience">
+  <p class="section-label fade-in">Experience</p>
+  <h2 class="section-title fade-in">Where I've worked.</h2>
+  <div class="experience-list fade-in">
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-role">Data Scientist</h3>
+          <p class="experience-company">Deloitte USI — Bangalore, India</p>
+        </div>
+        <span class="experience-date">Aug 2023 – Aug 2025</span>
+      </div>
+      <ul class="experience-bullets">
+        <li>Architected a GLM-based pricing engine integrating Pyomo and Gurobi solvers, improving demand forecast accuracy by 12% and reducing infeasible optimization solutions by 30%.</li>
+        <li>Led end-to-end deployment and monitoring of optimization pipelines on GCP, enabling scalable data-driven decision making.</li>
+        <li>Engineered a PySpark and Mini Batch KMeans clustering solution, increasing processing speed by 4x and reducing memory usage by 25%.</li>
+        <li>Developed semantic embeddings using MPNet and BERT transformers, enhancing downstream analytics precision by 30%.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-role">Software Engineering Intern</h3>
+          <p class="experience-company">Samsung R&D Institute — Bangalore, India</p>
+        </div>
+        <span class="experience-date">Jul 2022 – Dec 2022</span>
+      </div>
+      <ul class="experience-bullets">
+        <li>Designed and built a custom C++ library to simulate a local Bixby environment, creating a reproducible testing workflow for ML evaluation.</li>
+        <li>Developed scalable multi-threaded server-client architectures using TCP/IP and Linux sockets, improving reliability of high-volume data streaming pipelines.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
   <!-- Projects -->
   <section id="projects">
