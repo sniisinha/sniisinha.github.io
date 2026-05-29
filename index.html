@@ -56,32 +56,77 @@
 
     /* ── Hero ── */
     #hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8rem 4rem 6rem;
-    max-width: 800px;
-  }
-  .hero-aside {
-    display: flex;
-    gap: 4rem;
-    margin-top: 3rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--rule);
-  }
-  .hero-aside-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.4rem;
-  }
-  .hero-aside-value {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1rem;
-    color: var(--ink);
-  }
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 5rem;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 4rem 6rem 4rem;
+      border-right: 1px solid var(--rule);
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.75rem;
+      color: var(--ink);
+    }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 38ch;
+      line-height: 1.8;
+    }
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--soft);
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-outline {
+      border: 1px solid var(--ink);
+      color: var(--ink);
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--soft); }
+
+    .hero-aside {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 4rem;
+    }
+    .hero-aside-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .hero-aside-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
 
     /* ── Sections ── */
     section { padding: 6rem 4rem; border-top: 1px solid var(--rule); }
@@ -241,22 +286,20 @@
 
   <!-- Hero -->
   <section id="hero">
-    <p class="hero-eyebrow fade-in">Machine Learning · Computer Vision · NLP</p>
-    <h1 class="hero-name fade-in">Snigdha<br>Sinha</h1>
-    <p class="hero-tagline fade-in">CS graduate student at Boston University, building scalable ML solutions that bridge research and real-world impact.</p>
-    <div class="hero-cta fade-in">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    <div class="hero-text">
+      <p class="hero-eyebrow fade-in">Machine Learning · Computer Vision · NLP</p>
+      <h1 class="hero-name fade-in">Snigdha<br>Sinha</h1>
+      <p class="hero-tagline fade-in">CS graduate student at Boston University, building scalable ML solutions that bridge research and real-world impact.</p>
+      <div class="hero-cta fade-in">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
     </div>
     <div class="hero-aside fade-in">
-      <div>
-        <p class="hero-aside-label">Currently</p>
-        <p class="hero-aside-value">MS Computer Science<br>Boston University</p>
-      </div>
-      <div>
-        <p class="hero-aside-label">Also</p>
-        <p class="hero-aside-value">ML Engineer<br>Deloitte</p>
-      </div>
+      <p class="hero-aside-label">Currently</p>
+      <p class="hero-aside-value">MS Computer Science<br>Boston University</p>
+      <p class="hero-aside-label">Also</p>
+      <p class="hero-aside-value">ML Engineer<br>Deloitte</p>
     </div>
   </section>
 
