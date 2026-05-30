@@ -174,45 +174,65 @@
     }
 
      /* ── Experience ── */
-    .experience-list {
+     .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--rule);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 3.5rem 2.5rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -4px;
+      top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--soft);
+      outline: 1px solid var(--accent);
+    }
+
+    .timeline-content {
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
 
-    .experience-item {
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .experience-item:first-child { border-top: 1px solid var(--rule); }
-
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1.25rem;
-      gap: 1rem;
+    .experience-date {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
     }
 
     .experience-role {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       margin-bottom: 0.25rem;
     }
 
     .experience-company {
       font-size: 0.85rem;
       color: var(--accent);
-      letter-spacing: 0.03em;
-    }
-
-    .experience-date {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
+      margin-bottom: 1rem;
     }
 
     .experience-bullets {
@@ -223,7 +243,7 @@
     }
 
     .experience-bullets li {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #444;
       padding-left: 1rem;
       position: relative;
@@ -402,43 +422,41 @@
   </section>
 
   <!-- Experience -->
-<section id="experience">
-  <p class="section-label fade-in">Experience</p>
-  <h2 class="section-title fade-in">Where I've worked.</h2>
-  <div class="experience-list fade-in">
-
-    <div class="experience-item">
-      <div class="experience-header">
-        <div>
+  <section id="experience">
+    <p class="section-label fade-in">Experience</p>
+    <h2 class="section-title fade-in">Where I've worked.</h2>
+    <div class="timeline fade-in">
+  
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="experience-date">Aug 2023 – Aug 2025</span>
           <h3 class="experience-role">Data Scientist</h3>
           <p class="experience-company">Deloitte USI — Bangalore, India</p>
+          <ul class="experience-bullets">
+            <li>Architected a GLM-based pricing engine integrating Pyomo and Gurobi solvers, improving demand forecast accuracy by 12% and reducing infeasible optimization solutions by 30%.</li>
+            <li>Led end-to-end deployment and monitoring of optimization pipelines on GCP, enabling scalable data-driven decision making.</li>
+            <li>Engineered a PySpark and Mini Batch KMeans clustering solution, increasing processing speed by 4x and reducing memory usage by 25%.</li>
+            <li>Developed semantic embeddings using MPNet and BERT transformers, enhancing downstream analytics precision by 30%.</li>
+          </ul>
         </div>
-        <span class="experience-date">Aug 2023 – Aug 2025</span>
       </div>
-      <ul class="experience-bullets">
-        <li>Architected a GLM-based pricing engine integrating Pyomo and Gurobi solvers, improving demand forecast accuracy by 12% and reducing infeasible optimization solutions by 30%.</li>
-        <li>Led end-to-end deployment and monitoring of optimization pipelines on GCP, enabling scalable data-driven decision making.</li>
-        <li>Engineered a PySpark and Mini Batch KMeans clustering solution, increasing processing speed by 4x and reducing memory usage by 25%.</li>
-        <li>Developed semantic embeddings using MPNet and BERT transformers, enhancing downstream analytics precision by 30%.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <div class="experience-header">
-        <div>
+  
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="experience-date">Jul 2022 – Dec 2022</span>
           <h3 class="experience-role">Software Engineering Intern</h3>
           <p class="experience-company">Samsung R&D Institute — Bangalore, India</p>
+          <ul class="experience-bullets">
+            <li>Designed and built a custom C++ library to simulate a local Bixby environment, creating a reproducible testing workflow for ML evaluation.</li>
+            <li>Developed scalable multi-threaded server-client architectures using TCP/IP and Linux sockets, improving reliability of high-volume data streaming pipelines.</li>
+          </ul>
         </div>
-        <span class="experience-date">Jul 2022 – Dec 2022</span>
       </div>
-      <ul class="experience-bullets">
-        <li>Designed and built a custom C++ library to simulate a local Bixby environment, creating a reproducible testing workflow for ML evaluation.</li>
-        <li>Developed scalable multi-threaded server-client architectures using TCP/IP and Linux sockets, improving reliability of high-volume data streaming pipelines.</li>
-      </ul>
+  
     </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- Projects -->
   <section id="projects">
