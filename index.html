@@ -113,9 +113,13 @@
     .hero-aside {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       gap: 2rem;
-      padding: 4rem;
+    }
+
+    .hero-aside-info {
+      display: flex;
+      flex-direction: column;
     }
     .hero-aside-label {
       font-size: 0.7rem;
@@ -131,13 +135,13 @@
       margin-bottom: 2rem;
     }
     .hero-photo {
-      width: 110px;
-      height: 110px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
       border: 3px solid var(--rule);
-      flex-shrink: 0;
+      margin-top: 2rem;
     }
 
     /* ── Sections ── */
@@ -372,12 +376,12 @@
       </div>
     </div>
     <div class="hero-aside fade-in">
-      <img src="profile.jpeg" alt="Snigdha Sinha" class="hero-photo" />
       <p class="hero-aside-label">Currently</p>
       <p class="hero-aside-value">MS Computer Science<br>Boston University</p>
       <p class="hero-aside-label">Previously</p>
       <p class="hero-aside-value">ML Engineer<br>Deloitte</p>
     </div>
+    <img src="profile.jpeg" alt="Snigdha Sinha" class="hero-photo" />
   </section>
 
   <!-- About -->
