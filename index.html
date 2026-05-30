@@ -111,14 +111,17 @@
     .btn-outline:hover { background: var(--ink); color: var(--soft); }
 
     .hero-aside {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: auto auto;
       align-items: center;
-      gap: 2rem;
+      gap: 3rem;
+      padding: 4rem;
     }
+
     .hero-aside-info {
       display: flex;
       flex-direction: column;
+      gap: 0;
     }
     .hero-aside-label {
       font-size: 0.7rem;
@@ -375,11 +378,13 @@
       </div>
     </div>
     <div class="hero-aside fade-in">
-      <p class="hero-aside-label">Currently</p>
-      <p class="hero-aside-value">MS Computer Science<br>Boston University</p>
-      <p class="hero-aside-label">Previously</p>
-      <p class="hero-aside-value">ML Engineer<br>Deloitte</p>
-      <img src="profile.jpeg" alt="Snigdha Sinha" class="hero-photo" />
+      <div class="hero-aside-info">
+        <p class="hero-aside-label">Currently</p>
+        <p class="hero-aside-value">MS Computer Science<br>Boston University</p>
+        <p class="hero-aside-label">Previously</p>
+        <p class="hero-aside-value">ML Engineer<br>Deloitte</p>
+      </div>
+      <img src="profile.jpg" alt="Snigdha Sinha" class="hero-photo" />
     </div>
   </section>
 
