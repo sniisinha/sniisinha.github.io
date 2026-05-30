@@ -111,7 +111,10 @@
     .btn-outline:hover { background: var(--ink); color: var(--soft); }
 
     .hero-aside {
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
       padding: 4rem;
     }
     .hero-aside-label {
@@ -128,13 +131,13 @@
       margin-bottom: 2rem;
     }
     .hero-photo {
-      width: 160px;
-      height: 160px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
       border: 3px solid var(--rule);
-      margin-top: 2rem;
+      flex-shrink: 0;
     }
 
     /* ── Sections ── */
