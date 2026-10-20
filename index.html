@@ -173,6 +173,30 @@
       margin-bottom: 1.25rem;
     }
 
+    /* ── Research ── */
+    #research { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+    .research-item {
+      padding: 2.25rem;
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+    }
+    .research-summary {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1.25rem;
+    }
+    .research-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .research-tag {
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--rule);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
      /* ── Experience ── */
      .timeline {
       position: relative;
@@ -369,7 +393,8 @@
       .hero-text { padding: 5rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid var(--rule); }
       .hero-aside { padding: 2rem 1.5rem; }
       section { padding: 4rem 1.5rem; }
-      #about, #skills, #contact { grid-template-columns: 1fr; gap: 2rem; }
+      #about, #research, #skills, #contact { grid-template-columns: 1fr; gap: 2rem; }
+      .research-item { padding: 1.5rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
@@ -380,6 +405,7 @@
     <a class="nav-logo" href="#hero">Snigdha Sinha</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -416,9 +442,37 @@
       <h2 class="section-title fade-in">A bit about me.</h2>
     </div>
     <div class="about-body fade-in">
-      <p>CS graduate student at Boston University with experience applying machine learning and data science to problems in pricing, customer segmentation, and NLP.</p>
-      <p>At Deloitte, the focus has been on developing and scaling ML pipelines using GLMs, clustering algorithms, and transformer-based language models to support decision-making and automation across different business domains.</p>
-      <p>Skilled in Python, PySpark, TensorFlow, and Hugging Face, with a focus on building ML solutions that connect research to practical applications.</p>
+      <p>I'm a CS graduate student at Boston University, and my research centers on computer vision. As a Graduate Research Assistant at BU, I studied how feature extractors and backbone architectures perform on medical image classification and segmentation, and built an agent-orchestrated AutoML system to put those findings into practice.</p>
+      <p>That work grew out of a longer interest in how models learn visual representations: comparing Swin Transformer and ConvNeXt encoders in UNet segmentation pipelines, building multi-face detection systems, and benchmarking CNNs against Vision Transformers for robustness under distribution shift.</p>
+      <p>Next, I'm taking that foundation into multimodal research, working on <strong>multimodal LLMs</strong> and <strong>vision-language models (VLMs)</strong>: how models can connect what they see with language and reason across both.</p>
+      <p>Before grad school, I spent two years at Deloitte building and deploying ML pipelines for pricing, demand forecasting, and NLP on GCP. That experience shapes how I approach research: rigorous experiments, backed by systems that are reproducible and built to scale.</p>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section id="research">
+    <div>
+      <p class="section-label fade-in">Research</p>
+      <h2 class="section-title fade-in">What I've been investigating.</h2>
+    </div>
+    <div class="research-item fade-in">
+      <span class="experience-date">Apr 2026 – Aug 2026</span>
+      <h3 class="experience-role">Computer Vision for Medical Imaging</h3>
+      <p class="experience-company">Graduate Research Assistant — Boston University, Boston, MA</p>
+      <p class="research-summary">Studied how computer vision feature extractors and backbone architectures perform on medical image classification and segmentation, then built the tooling to test those ideas in practice.</p>
+      <ul class="experience-bullets">
+        <li>Designed and built an agent-orchestrated AutoML system with a Gradio interface and CPU/GPU routing for running classification and segmentation experiments.</li>
+        <li>Developed a custom backbone upload system within the medical imaging pipeline, enabling experimentation with new feature extractor architectures through governed model packaging for reproducible export.</li>
+        <li>Engineered a manifest generation and normalization system that standardizes diverse medical imaging dataset formats, with automated validation and error handling for consistent, reliable data across experiments.</li>
+      </ul>
+      <div class="research-tags">
+        <span class="research-tag">Medical Imaging</span>
+        <span class="research-tag">Segmentation</span>
+        <span class="research-tag">Classification</span>
+        <span class="research-tag">Backbone Architectures</span>
+        <span class="research-tag">AutoML</span>
+        <span class="research-tag">Agents</span>
+      </div>
     </div>
   </section>
 
