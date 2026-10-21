@@ -282,15 +282,16 @@
     }
 
     /* ── Projects ── */
+    /* Flex-wrap so cards on every row (including a partial last row) stretch to fill the width */
     #projects .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5px;
-      background: var(--rule);
-      border: 1.5px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
     }
     .project-card {
+      flex: 1 1 300px;
       background: var(--soft);
+      border: 1px solid var(--rule);
       padding: 2.25rem;
       transition: background 0.2s;
     }
@@ -548,14 +549,16 @@
     <div class="skills-grid fade-in">
       <span class="skill-tag">Python</span>
       <span class="skill-tag">C++</span>
+      <span class="skill-tag">SQL</span>
       <span class="skill-tag">PyTorch</span>
       <span class="skill-tag">TensorFlow</span>
-      <span class="skill-tag">Keras</span>
-      <span class="skill-tag">AWS</span>
-      <span class="skill-tag">GCP</span>
-      <span class="skill-tag">NLP</span>
-      <span class="skill-tag">PySpark</span>
       <span class="skill-tag">Hugging Face</span>
+      <span class="skill-tag">OpenCV</span>
+      <span class="skill-tag">PySpark</span>
+      <span class="skill-tag">FastAPI</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">GCP</span>
+      <span class="skill-tag">AWS</span>
     </div>
   </section>
 
